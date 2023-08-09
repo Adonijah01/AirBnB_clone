@@ -3,7 +3,7 @@
 
  Project to be done in teams of 2 people (Betty Cherutich, Adonijah Kiplimo)
 
- https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230809%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230809T101605Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=08155c43985a2cc95fde25694cc0905880ab98df1abdb3f19f3d01301bd8ebfe
+ [![trophy](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230809%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230809T101605Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=08155c43985a2cc95fde25694cc0905880ab98df1abdb3f19f3d01301bd8ebfe)
 
 
  Background Context
