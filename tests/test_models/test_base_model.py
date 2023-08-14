@@ -15,25 +15,25 @@ import uuid
 
 class TestBaseModel(unittest.TestCase):
 
-    """Test Cases for the BaseModel class."""
+    """Test Case for the BaseModel class."""
 
     def setUp(self):
-        """Sets up test methods."""
+        """Setting up test method."""
         pass
 
     def tearDown(self):
-        """Tears down test methods."""
+        """Tears down test method."""
         self.resetStorage()
         pass
 
     def resetStorage(self):
-        """Resets FileStorage data."""
+        """Resets FileStorage."""
         FileStorage._FileStorage__objects = {}
         if os.path.isfile(FileStorage._FileStorage__file_path):
             os.remove(FileStorage._FileStorage__file_path)
 
     def test_3_instantiation(self):
-        """Tests instantiation of BaseModel class."""
+        """Tests inst of BaseModel class."""
 
         b = BaseModel()
         self.assertEqual(str(type(b)), "<class 'models.base_model.BaseModel'>")
@@ -65,7 +65,7 @@ class TestBaseModel(unittest.TestCase):
             self.assertEqual(type(getattr(o, k, None)), v)
 
     def test_3_datetime_created(self):
-        """Tests if updated_at & created_at are current at creation."""
+        """Tests whether  updated_at & created_at are current at creation."""
         date_now = datetime.now()
         b = BaseModel()
         diff = b.updated_at - b.created_at
@@ -74,13 +74,13 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(abs(diff.total_seconds()) < 0.1)
 
     def test_3_id(self):
-        """Tests for unique user ids."""
+        """Tests for unique userids."""
 
         l = [BaseModel().id for i in range(1000)]
         self.assertEqual(len(set(l)), len(l))
 
     def test_3_save(self):
-        """Tests the public instance method save()."""
+        """Tests public inst method save()."""
 
         b = BaseModel()
         time.sleep(0.5)
@@ -106,7 +106,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(d, d2)
 
     def test_3_to_dict(self):
-        """Tests the public instance method to_dict()."""
+        """Test the public instance method to_dict()."""
 
         b = BaseModel()
         b.name = "Laura"
@@ -120,7 +120,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(d["age"], b.age)
 
     def test_3_to_dict_no_args(self):
-        """Tests to_dict() with no arguments."""
+        """Tests to_dict() with no args."""
         self.resetStorage()
         with self.assertRaises(TypeError) as e:
             BaseModel.to_dict()
@@ -128,7 +128,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(str(e.exception), msg)
 
     def test_3_to_dict_excess_args(self):
-        """Tests to_dict() with too many arguments."""
+        """Tests to_dict() with many args."""
         self.resetStorage()
         with self.assertRaises(TypeError) as e:
             BaseModel.to_dict(self, 98)
@@ -136,7 +136,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(str(e.exception), msg)
 
     def test_4_instantiation(self):
-        """Tests instantiation with **kwargs."""
+        """Tests instantiation using **kwargs."""
 
         my_model = BaseModel()
         my_model.name = "Holberton"
@@ -191,3 +191,4 @@ class TestBaseModel(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    """adonijah/betty"""

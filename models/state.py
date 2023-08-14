@@ -5,5 +5,6 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """Class representing a State."""
+    """Class representing State."""
     name = ""
+    """adonijah/betty"""

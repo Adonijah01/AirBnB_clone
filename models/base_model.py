@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module for Base class
-Contains the Base class for the AirBnB clone console.
+Containng the Base class for AirBnB console.
 """
 
 import uuid
@@ -10,14 +10,14 @@ from models import storage
 
 class BaseModel:
 
-    """Class for base model of object hierarchy."""
+    """Class for base model of hierarchy of object."""
 
     def __init__(self, *args, **kwargs):
-        """Initialization of a Base instance.
+        """Initialization of  Base instance.
 
         Args:
             - *args: list of arguments
-            - **kwargs: dict of key-values arguments
+            - **kwargs: dicttionary of key-value arguments
         """
 
         if kwargs is not None and kwargs != {}:
@@ -37,21 +37,22 @@ class BaseModel:
             storage.new(self)
 
     def __str__(self):
-        """Returns a human-readable string representation
-        of an instance."""
+        """Return human
+        readable string rep
+        of a instance."""
 
         return "[{}] ({}) {}".\
             format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
-        """Updates the updated_at attribute
-        with the current datetime."""
+        """Updates the updatd attribute
+        with current datetime."""
 
         self.updated_at = datetime.now()
         storage.save()
 
     def to_dict(self):
-        """Returns a dictionary representation of an instance."""
+        """Return dictionary rep of an instance."""
 
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = type(self).__name__

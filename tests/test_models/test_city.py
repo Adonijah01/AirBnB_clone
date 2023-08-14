@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Unittest module for the City Class."""
+"""Unittest module for the Classs City."""
 
 import unittest
 from datetime import datetime
@@ -15,7 +15,7 @@ from models.base_model import BaseModel
 
 class TestCity(unittest.TestCase):
 
-    """Test Cases for the City class."""
+    """Test Cases for  City class."""
 
     def setUp(self):
         """Sets up test methods."""
@@ -33,7 +33,7 @@ class TestCity(unittest.TestCase):
             os.remove(FileStorage._FileStorage__file_path)
 
     def test_8_instantiation(self):
-        """Tests instantiation of City class."""
+        """Tests instantiation of the City class."""
 
         b = City()
         self.assertEqual(str(type(b)), "<class 'models.city.City'>")
@@ -50,3 +50,4 @@ class TestCity(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+    """adonijah/betty"""
