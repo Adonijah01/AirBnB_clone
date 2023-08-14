@@ -60,4 +60,4 @@ class BaseModel:
         my_dict["updated_at"] = my_dict["updated_at"].isoformat()
         return my_dict
 
-    """Adonijah Kiplimo & Betty Cherutich"""
+    """Adonijah Kiplimo & Betty jelagat"""

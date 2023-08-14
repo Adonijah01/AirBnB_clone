@@ -9,4 +9,4 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
-    """adonijah/betty"""
+    """adonijah kiplimo/betty jelagat"""

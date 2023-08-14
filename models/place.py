@@ -18,4 +18,4 @@ class Place(BaseModel):
     longitude = 0.0
     amenity_ids = []
 
-    """adonijah/betty"""
+    """adonijah kiplimo/betty jelagat"""
