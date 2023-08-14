@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Defines HBnB console"""
+"""Defines HBnB console."""
+import cmd
 import re
-import cmd 
 from shlex import split
 from models import storage
 from models.base_model import BaseModel
@@ -32,7 +32,7 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the HolbertonBnB command interpreter.
+    """Define HolbertonBnB command interpreter.
 
     Attributes:
         prompt (str): The command prompt.
@@ -50,11 +50,11 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def emptyline(self):
-        """Do nothing after receiving empty line."""
+        """Does nothing upon receiving an empty line."""
         pass
 
     def default(self, arg):
-        """Default behavior for cmd  when input is invalid"""
+        """default behavior of cmd module when input is invalid"""
         argdict = {
             "all": self.do_all,
             "show": self.do_show,
@@ -75,17 +75,17 @@ class HBNBCommand(cmd.Cmd):
         return False
 
     def do_quit(self, arg):
-        """Quit command."""
+        """Quit command to exit ."""
         return True
 
     def do_EOF(self, arg):
-        """EOF signal for exiting program."""
+        """EOF signal to exit"""
         print("")
         return True
 
     def do_create(self, arg):
         """Usage: create <class>
-        Create 0000new class instance and print its id.
+        Create a new class instance and print its id.
         """
         argl = parse(arg)
         if len(argl) == 0:
@@ -97,31 +97,31 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_show(self, arg):
-        """
+        """Usage: show <class> <id> or <class>.show(<id>)
         Display the string representation of a class instance of a given id.
         """
         argl = parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
-            print("** classname missing **")
+            print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
-            print("** class does not exist **")
+            print("** class doesn't exist **")
         elif len(argl) == 1:
-            print("** id instance missing **")
+            print("** instance id missing **")
         elif "{}.{}".format(argl[0], argl[1]) not in objdict:
             print("** no instance found **")
         else:
             print(objdict["{}.{}".format(argl[0], argl[1])])
 
     def do_destroy(self, arg):
-        """Usage: rdestroy <class> <id> or <class>.destroy(<id>)
-        Delete class instance of id given."""
+        """Usage: destroy <class> <id> or <class>.destroy(<id>)
+        Delete a class instance of given id."""
         argl = parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
-            print("** class does not exist **")
+            print("** class doesn't exist **")
         elif len(argl) == 1:
             print("** instance id missing **")
         elif "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """Usage: all or all <class> or <class>.all()
-        Display string representations of all instances of a given class.
+        Display string reps of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
         argl = parse(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
@@ -157,9 +157,11 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def do_update(self, arg):
-        """
+        """Usage: update <class> <id> <attribute_name> <attribute_value> or
+       <class>.update(<id>, <attribute_name>, <attribute_value>) or
+       <class>.update(<id>, <dictionary>)
         Update a class instance of a given id by adding or updating
-        a given attribute key pair."""
+        a given attribute key/value pair or dictionary."""
         argl = parse(arg)
         objdict = storage.all()
 
@@ -206,5 +208,4 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
-
-    """Adonijah Kiplimo & Betty Cherutich"""
+    """adonijah/betty"""
